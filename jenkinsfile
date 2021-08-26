@@ -10,7 +10,7 @@ pipeline{
         stage('deploy'){
             steps{
                 bat """
-                sam deploy --template-file packaged-lambda.yaml --stack-name JenkinPipelineCalculatorApp --capabilities CAPABILITY_IAM
+                sam deploy --template-file cft.yaml --stack-name JenkinPipelineCalculatorApp --capabilities CAPABILITY_IAM
                 """
             }
         }
