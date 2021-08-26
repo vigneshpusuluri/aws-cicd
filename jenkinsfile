@@ -8,9 +8,7 @@ pipeline{
         }
         stage('build-package'){
             steps{
-                bat """
-                sam package --template-file cft.yaml --s3-bucket saksham2 --output-template-file packaged-lambda.yaml
-                """
+                
             }
         }
         stage('deploy'){
