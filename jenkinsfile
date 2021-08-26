@@ -4,6 +4,7 @@ pipeline{
         stage('unit-testing'){
             steps{
                 bat 'python calcu/test.py'
+                bat """ aws configure list"""
             }
         }
         stage('build-package'){
