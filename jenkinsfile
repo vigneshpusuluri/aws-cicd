@@ -6,11 +6,7 @@ pipeline{
                 bat 'python calcu/test.py'
             }
         }
-        stage('build-package'){
-            steps{
-                
-            }
-        }
+        
         stage('deploy'){
             steps{
                 bat """
