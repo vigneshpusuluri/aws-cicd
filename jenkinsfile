@@ -6,11 +6,17 @@ pipeline{
                 bat 'python calcu/test.py'
             }
         }
-        
+        stage('build-package'){
+            steps{
+                bat """
+                sam package --template-file cft.yaml --s3-bucket vignesh-cicd --output-template-file packaged-lambda.yaml
+                """
+            }
+        }
         stage('deploy'){
             steps{
                 bat """
-                sam deploy --template-file cft.yaml --stack-name JenkinPipelineCalculatorApp --capabilities CAPABILITY_IAM
+                sam deploy --template-file packaged-lambda.yaml --stack-name JenkinPipelineCalculatorApp --capabilities CAPABILITY_IAM
                 """
             }
         }
