@@ -9,7 +9,7 @@ pipeline{
         stage('build-package'){
             steps{
                 bat """
-                sam package --template-file cft.yaml --output-template-file packaged-lambda.yaml
+                sam package --template-file cft.yaml --s3-bucket saksham2 --output-template-file packaged-lambda.yaml
                 """
             }
         }
