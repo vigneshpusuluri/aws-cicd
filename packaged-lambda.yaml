@@ -10,4 +10,4 @@ Resources:
       CodeUri: s3://vignesh-cicd/
       Description: AWS LAMBDA of Calculator-app
       Timeout: 10
-      Role: s3-acess
+      Role: arn:aws:iam::467409941327:role/s3-acess
