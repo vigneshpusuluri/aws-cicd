@@ -1,12 +1,12 @@
-@Library('github.com/releaseworks/jenkinslib') _
 pipeline{
     agent any
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+    }
     stages {
         stage('unit-testing'){
-            steps{
-            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: '34893827-b20b-4672-b5f6-9280d73a52c6', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        AWS("--region=eu-west-1 s3 ls")
-    }
+                sh 'aws configure set region us-east-1'
                 bat 'python calcu/test.py'
                 bat """ aws configure list"""
             }
