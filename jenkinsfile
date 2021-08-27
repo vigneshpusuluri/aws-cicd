@@ -6,6 +6,7 @@ pipeline{
     }
     stages {
         stage('unit-testing'){
+                steps{
                 sh 'aws configure set region us-east-1'
                 bat 'python calcu/test.py'
                 bat """ aws configure list"""
