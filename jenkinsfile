@@ -22,7 +22,7 @@ pipeline{
         stage('deploy'){
             steps{
                 bat """
-                sam deploy --template-file packaged-lambda.yaml --stack-name myjenkins --capabilities CAPABILITY_IAM
+                sam deploy --template-file packaged-lambda.yaml --stack-name myjenkins 
                 """
             }
         }
