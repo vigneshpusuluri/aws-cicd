@@ -23,9 +23,13 @@ Resources:
           - Effect: Allow
             Action: '*'
             Resource: '*'      
-   DevopsAssignment:
-      Type: AWS::Serverless::Function 
-      Properties:
-         Handler: calculator.lambda_handler
-         Runtime: python3.8
-         Role: !GetAtt ExecutionRole.Arn
+   calculator:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: Calculator.lambda_handler
+      Runtime: python3.8
+      CodeUri: s3://vignesh-cicd/
+      Description: AWS LAMBDA of Calculator-app
+      Timeout: 10
+      Role: !GetAtt ExecutionRole.Arn
+
