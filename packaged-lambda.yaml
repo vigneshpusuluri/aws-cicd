@@ -9,5 +9,5 @@ Resources:
       Runtime: python3.8
       CodeUri: s3://vignesh-cicd/
       Description: AWS LAMBDA of Calculator-ap
-      Timeout: 10
+      Timeout: 100
       Role: arn:aws:iam::467409941327:role/s3-acess
