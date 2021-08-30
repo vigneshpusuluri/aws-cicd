@@ -8,6 +8,6 @@ Resources:
       Handler: Calculator.lambda_handler
       Runtime: python3.8
       CodeUri: s3://vignesh-cicd/
-      Description: AWS LAMBDA of Calculator-app
+      Description: AWS LAMBDA of Calculator-ap
       Timeout: 10
       Role: arn:aws:iam::467409941327:role/s3-acess
